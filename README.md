@@ -7,33 +7,18 @@
 <hr>
 <h2>👨‍👩‍👦‍👦 팀원 소개</h2>
 <table>
-  <thead>
-    <tr>
-      <th>사진</th>
-      <th>이름</th>
-      <th>GitHub</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
       <td><img src="https://github.com/jihosky.png" width="80" style="border-radius: 50%;"></td>
-      <td>문지호</td>
-      <td><a href="https://github.com/jihosky">@jihosky</a></td>
-    </tr>
-    <tr>
       <td><img src="https://github.com/kongbh730.png" width="80" style="border-radius: 50%;"></td>
-      <td>공병현</td>
-      <td><a href="https://github.com/kongbh730">@kongbh730</a></td>
-    </tr>
-    <tr>
       <td><img src="https://github.com/Do-Yeop-Kim.png" width="80" style="border-radius: 50%;"></td>
-      <td>김도엽</td>
-      <td><a href="https://github.com/Do-Yeop-Kim">@Do-Yeop-Kim</a></td>
+      <td><img src="https://github.com/jin05105.png" width="80" style="border-radius: 50%;"></td>
     </tr>
     <tr>
-      <td><img src="https://github.com/jin05105.png" width="80" style="border-radius: 50%;"></td>
-      <td>이태규</td>
-      <td><a href="https://github.com/jin05105">@jin05105</a></td>
+      <td><a href="https://github.com/jihosky">문지호@jihosky</a></td>
+      <td><a href="https://github.com/kongbh730">공병현@kongbh730</a></td>
+      <td><a href="https://github.com/Do-Yeop-Kim">김도엽@Do-Yeop-Kim</a></td>
+      <td><a href="https://github.com/jin05105">이태규@jin05105</a></td>
     </tr>
   </tbody>
 </table>

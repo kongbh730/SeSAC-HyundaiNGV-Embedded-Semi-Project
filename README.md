@@ -9,10 +9,26 @@
 <table>
   <tbody>
     <tr>
-      <td><img src="https://github.com/jihosky.png" width="160" style="border-radius: 50%;"></td>
-      <td><img src="https://github.com/kongbh730.png" width="160" style="border-radius: 50%;"></td>
-      <td><img src="https://github.com/Do-Yeop-Kim.png" width="160" style="border-radius: 50%;"></td>
-      <td><img src="https://github.com/jin05105.png" width="160" style="border-radius: 50%;"></td>
+      <td>
+        <a href="https://github.com/jihosky">
+          <img src="https://github.com/jihosky.png" width="80" style="border-radius: 50%;">
+        </a>
+      </td>
+      <td>
+        <a href="https://github.com/kongbh730">
+          <img src="https://github.com/kongbh730.png" width="80" style="border-radius: 50%;">
+        </a>
+      </td>
+      <td>
+        <a href="https://github.com/Do-Yeop-Kim">
+          <img src="https://github.com/Do-Yeop-Kim.png" width="80" style="border-radius: 50%;">
+        </a>
+      </td>
+      <td>
+        <a href="https://github.com/jin05105">
+          <img src="https://github.com/jin05105.png" width="80" style="border-radius: 50%;">
+        </a>
+      </td>
     </tr>
     <tr>
       <td><a href="https://github.com/jihosky">문지호@jihosky</a></td>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vehicle Viewer</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f4f4f5;
+    }
+    header {
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+    .tabs {
+      display: flex;
+      gap: 8px;
+      padding: 16px 24px;
+    }
+    .tab-button {
+      padding: 8px 16px;
+      background-color: #e4e4e7;
+      border-radius: 4px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+    .tab-button.active {
+      background-color: #6366f1;
+      color: white;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      padding: 24px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .badge {
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: bold;
+      color: white;
+    }
+    .badge.normal { background-color: #10b981; }
+    .badge.accident { background-color: #ef4444; }
+    .badge.maintenance { background-color: #facc15; color: black; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🚗 Vehicle Viewer</h1>
+</header>
+
+<div class="tabs">
+  <a href="vehicleViewer.html" class="tab-button active">Vehicles</a>
+  <a href="accidentsViewer.html" class="tab-button">Accidents</a>
+</div>
+
+<div class="card-grid" id="vehicle-list"></div>
+
+<script>
+  const vehicleMap = new Map(); // vehicleId → 카드 DOM 매핑용
+
+  fetch('/api/vehicles')
+          .then(res => res.json())
+          .then(data => {
+            const container = document.getElementById('vehicle-list');
+            data.forEach(vehicle => {
+              const badgeClass =
+                      vehicle.status === 'Normal' ? 'normal' :
+                              vehicle.status === 'Accident Reported' ? 'accident' : 'maintenance';
+
+              const card = document.createElement('div');
+              card.className = 'card';
+              card.setAttribute('data-id', vehicle.id);
+
+              card.innerHTML = `
+          <div class="badge ${badgeClass}" 
+            id="status-${vehicle.id}" 
+            data-driver="${vehicle.driver}" 
+            data-name="${vehicle.name}">
+            ${vehicle.status}
+          </div>
+          <h2>${vehicle.name}</h2>
+          <p><strong>ID:</strong> driver-${vehicle.id}</p>
+          <p><strong>Driver:</strong> ${vehicle.driver}</p>
+          <p><strong>Location:</strong> ${vehicle.location}</p>
+        `;
+              container.appendChild(card);
+              vehicleMap.set(vehicle.id, card); // id 기준 저장
+
+              // 👉 사고 상태일 때만 클릭 이벤트 부여
+              if (vehicle.status === "Accident Reported") {
+                card.style.cursor = "pointer";
+                card.addEventListener("click", () => {
+                  window.location.href = `accidentsViewer.html?vehicleId=${vehicle.id}`;
+                });
+              }
+            });
+          });
+
+  function showCustomAlert(message) {
+    const alertBox = document.getElementById("custom-alert");
+    alertBox.textContent = message;
+    alertBox.style.display = "block";
+    alertBox.style.opacity = "1";
+
+    // 3초 후 자동 숨김
+    setTimeout(() => {
+      alertBox.style.opacity = "0";
+      setTimeout(() => {
+        alertBox.style.display = "none";
+      }, 300);
+    }, 3000);
+  }
+
+  // ✅ WebSocket 연결 (ws:// or wss://)
+  const socket = new WebSocket("ws://192.168.100.122:8081/ws/accidents");
+
+  socket.onmessage = function(event) {
+    const message = event.data; // 예: "accident:1"
+    console.log("사고 메시지 수신:", message);
+
+    if (message.startsWith("accident:")) {
+      const vehicleId = parseInt(message.split(":")[1]);
+      const statusElement = document.getElementById("status-" + vehicleId);
+      const driver = statusElement.getAttribute("data-driver");
+      const vehicleName = statusElement.getAttribute("data-name");
+
+      if (statusElement) {
+        //  UI 업데이트
+        statusElement.className = "badge accident";
+        statusElement.textContent = "Accident Reported";
+
+        statusElement.className = "badge accident";
+        statusElement.textContent = "Accident Reported";
+
+        // 🚫 alert() 대신
+        showCustomAlert(`🚨 ${driver}의 차량 ${vehicleName}(${vehicleId})에서 사고가 발생했습니다! 🚨`);
+      }
+    }
+  };
+
+  socket.onerror = function(error) {
+    console.error("WebSocket 오류:", error);
+  };
+</script>
+
+<div id="custom-alert" style="
+  display: none;
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  background-color: #ef4444;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-weight: bold;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+"></div>
+
+
+</body>
+</html>

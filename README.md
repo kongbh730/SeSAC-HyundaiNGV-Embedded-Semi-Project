@@ -11,22 +11,22 @@
     <tr>
       <td>
         <a href="https://github.com/jihosky">
-          <img src="https://github.com/jihosky.png" width="80" style="border-radius: 50%;">
+          <img src="https://github.com/jihosky.png" width="200" style="border-radius: 50%;">
         </a>
       </td>
       <td>
         <a href="https://github.com/kongbh730">
-          <img src="https://github.com/kongbh730.png" width="80" style="border-radius: 50%;">
+          <img src="https://github.com/kongbh730.png" width="200" style="border-radius: 50%;">
         </a>
       </td>
       <td>
         <a href="https://github.com/Do-Yeop-Kim">
-          <img src="https://github.com/Do-Yeop-Kim.png" width="80" style="border-radius: 50%;">
+          <img src="https://github.com/Do-Yeop-Kim.png" width="200" style="border-radius: 50%;">
         </a>
       </td>
       <td>
         <a href="https://github.com/jin05105">
-          <img src="https://github.com/jin05105.png" width="80" style="border-radius: 50%;">
+          <img src="https://github.com/jin05105.png" width="200" style="border-radius: 50%;">
         </a>
       </td>
     </tr>

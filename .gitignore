@@ -3,5 +3,21 @@
 *.class
 *.jar
 *.war
-.env
 application.yml
+
+# Gradle
+.gradle/
+build/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+
+# 환경파일
+.env

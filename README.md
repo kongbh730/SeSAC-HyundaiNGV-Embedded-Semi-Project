@@ -31,10 +31,10 @@
       </td>
     </tr>
     <tr>
-      <td align="center"><a href="https://github.com/jihosky">문지호@jihosky</a></td>
-      <td align="center"><a href="https://github.com/kongbh730">공병현@kongbh730</a></td>
-      <td align="center"><a href="https://github.com/Do-Yeop-Kim">김도엽@Do-Yeop-Kim</a></td>
-      <td align="center"><a href="https://github.com/jin05105">이태규@jin05105</a></td>
+      <td align="center"><a href="https://github.com/jihosky">문지호<br>@jihosky</a></td>
+      <td align="center"><a href="https://github.com/kongbh730">공병현<br>@kongbh730</a></td>
+      <td align="center"><a href="https://github.com/Do-Yeop-Kim">김도엽<br>@Do-Yeop-Kim</a></td>
+      <td align="center"><a href="https://github.com/jin05105">이태규<br>@jin05105</a></td>
     </tr>
     <tr>
       <td>CAN 통신 구축,...</td>
@@ -43,41 +43,6 @@
       <td>LCD 기능 구현,...</td>
     </tr>
   </tbody>
-</table>
-
-<h2>👨‍💻 팀원 소개</h2>
-
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/jihosky">
-        <img src="https://github.com/jihosky.png" width="100" style="border-radius: 50%;"><br>
-        <strong>문지호</strong><br>
-        @jihosky
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/kongbh730">
-        <img src="https://github.com/kongbh730.png" width="100" style="border-radius: 50%;"><br>
-        <strong>공병현</strong><br>
-        @kongbh730
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/Do-Yeop-Kim">
-        <img src="https://github.com/Do-Yeop-Kim.png" width="100" style="border-radius: 50%;"><br>
-        <strong>김도엽</strong><br>
-        @Do-Yeop-Kim
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/jin05105">
-        <img src="https://github.com/jin05105.png" width="100" style="border-radius: 50%;"><br>
-        <strong>이태규</strong><br>
-        @jin05105
-      </a>
-    </td>
-  </tr>
 </table>
 
 

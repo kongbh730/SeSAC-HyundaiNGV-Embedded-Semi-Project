@@ -1,41 +1,52 @@
-<h1> 🚘 현대자동차그룹 모빌리티 SW 개발자 데뷔 과정</h1>
-<h2> 🔧 중간 프로젝트</h2>
-<h5> 📅 2025-03-18 ~ 2025-03-27</h5>
+<h1>🚘 현대자동차그룹 모빌리티 SW 개발자 데뷔 과정</h1>
+<h2>🔧 중간 프로젝트</h2>
+<p>📅 <strong>진행 기간:</strong> 2025-03-18 ~ 2025-03-27</p>
+
 <img src="https://github.com/user-attachments/assets/b1219eef-5cc7-4096-b62d-ff7fa889b284" alt="중간 프로젝트 플로우차트 버스" style="width: 100%; max-width: 600px;">
 
-
 <hr>
-<h3>팀원 소개</h3>
+<h2>👨‍👩‍👦‍👦 팀원 소개</h2>
 <table>
-  <tr>
-    <td>
-      <a href="https://github.com/jihosky">문지호</a><br>
-    </td>
-    <td>
-      <a href="https://github.com/kongbh730">공병현</a><br>
-    </td>
-    <td>
-      <a href="https://github.com/Do-Yeop-Kim">김도엽</a><br>
-    </td>
-    <td>
-      <a href="https://github.com/jin05105">이태규</a><br>
-    </td>
-  </tr>
+  <thead>
+    <tr>
+      <th>이름</th>
+      <th>GitHub</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>문지호</td>
+      <td><a href="https://github.com/jihosky">@jihosky</a></td>
+    </tr>
+    <tr>
+      <td>공병현</td>
+      <td><a href="https://github.com/kongbh730">@kongbh730</a></td>
+    </tr>
+    <tr>
+      <td>김도엽</td>
+      <td><a href="https://github.com/Do-Yeop-Kim">@Do-Yeop-Kim</a></td>
+    </tr>
+    <tr>
+      <td>이태규</td>
+      <td><a href="https://github.com/jin05105">@jin05105</a></td>
+    </tr>
+  </tbody>
 </table>
 
 <hr>
-<h3>코드 구조 및 설명</h3>
 
-- RaspiCAN.py
-- LCD
-- Motor/ServoMotor
-- Buzzer
-- WebService
-
-
-<hr>
-사용 장비
-
-<hr>
-
-
+<h2>📁 코드 구조 및 설명</h2>
+<ul>
+  <li><strong>📄 RaspiCAN.py</strong> – 라즈베리파이 CAN 통신 및 사고 감지 스크립트</li>
+  <li><strong>📁 LCD/</strong> – LCD 디스플레이 제어</li>
+  <li><strong>📁 Motor/</strong> – DC 모터 제어</li>
+  <li><strong>📁 Motor/ServoMotor/</strong> – 서보모터 제어</li>
+  <li><strong>📁 Buzzer/</strong> – 부저 (경고음) 제어</li>
+  <li><strong>📁 WebService/</strong> – Spring Boot 웹 서비스 (DB, WebSocket 실시간 알림)
+    <ul>
+      <li>src/ – 자바 소스코드</li>
+      <li>build.gradle – Gradle 설정</li>
+      <li>application.yml – 환경 설정</li>
+    </ul>
+  </li>
+</ul>

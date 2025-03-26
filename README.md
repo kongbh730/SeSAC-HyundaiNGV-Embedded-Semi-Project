@@ -4,6 +4,8 @@
 <p>📅 <strong>진행 기간:</strong> 2025-03-18 ~ 2025-03-27</p>
 
 <img src="https://github.com/user-attachments/assets/b1219eef-5cc7-4096-b62d-ff7fa889b284" alt="중간 프로젝트 플로우차트 버스" style="width: 100%; max-width: 600px;">
+![KakaoTalk_20250326_105101801](https://github.com/user-attachments/assets/5a44d944-afe9-401d-8108-34c59e0b2af4)
+
 <h2>🎬 프로젝트 시연 영상</h2>
 
 [![Video Label](http://img.youtube.com/vi/6gstFbx9MVY/0.jpg)](https://youtu.be/6gstFbx9MVY)
@@ -94,7 +96,7 @@
       <li>Servo_Motor.ioc</li>
     </ul>
   </li>
-  <li><strong>📁 <a href="https://github.com/kongbh730/SeSAC-HyundaiNGV-Embedded-Semi-Project/tree/main/Buzzer">Buzzer/</strong> – 부저 (경고음) 제어트</a>
+  <li><strong>📁 <a href="https://github.com/kongbh730/SeSAC-HyundaiNGV-Embedded-Semi-Project/tree/main/Buzzer">Buzzer/</strong> – 부저 (경고음) 제어</a>
     <ul>
       <li>📁 Core/</li>
       <li>📁 Drivers/</li>

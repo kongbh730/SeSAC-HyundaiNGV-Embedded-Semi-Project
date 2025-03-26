@@ -60,6 +60,8 @@
     <h1>🚧 Accident Viewer</h1>
 </header>
 
+<audio id="alert-sound" src="/chime.mp3" preload="auto"></audio>
+
 <div class="tabs">
     <a href="vehicleViewer.html" class="tab-button">Vehicles</a>
     <a href="accidentsViewer.html" class="tab-button active">Accidents</a>
@@ -79,6 +81,21 @@
     <tbody></tbody>
 </table>
 
+<div id="custom-alert" style="
+  display: none;
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  background-color: #ef4444;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-weight: bold;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+"></div>
+
 <script>
     const vehicleMap = {};
     let accidentList = [];
@@ -89,20 +106,34 @@
         alertBox.style.display = "block";
         alertBox.style.opacity = "1";
 
+        const audio = document.getElementById("alert-sound");
+        if (audio) {
+            audio.currentTime = 0;
+            audio.play().catch(e => console.warn("🔇 오디오 자동 재생 차단됨:", e));
+        }
+
         setTimeout(() => {
             alertBox.style.opacity = "0";
             setTimeout(() => {
                 alertBox.style.display = "none";
-                location.reload();
             }, 300);
         }, 3000);
     }
 
+    // 새로고침 후 alert 메시지 있는 경우
+    window.addEventListener("DOMContentLoaded", () => {
+        const pendingAlert = localStorage.getItem("pendingAlert");
+        if (pendingAlert) {
+            showCustomAlert(pendingAlert);
+            localStorage.removeItem("pendingAlert");
+        }
+    });
+
     function renderAccidentTable() {
         const tbody = document.querySelector('#accident-table tbody');
-        tbody.innerHTML = ''; // 전체 초기화
+        tbody.innerHTML = '';
 
-        // 최신순 정렬
+        // 내림차순 정렬
         accidentList.sort((a, b) => new Date(b.datetime) - new Date(a.datetime));
 
         accidentList.forEach(accident => {
@@ -120,7 +151,7 @@
         });
     }
 
-    // 차량 → 사고 초기 불러오기
+    // 초기 로딩
     fetch('/api/vehicles')
         .then(res => res.json())
         .then(vehicles => {
@@ -133,7 +164,7 @@
             renderAccidentTable();
         });
 
-    // WebSocket 실시간 사고 수신
+    // WebSocket 사고 수신
     const socket = new WebSocket("ws://192.168.100.122:8081/ws/accidents");
 
     socket.onmessage = function(event) {
@@ -143,34 +174,19 @@
         if (message.startsWith("accident:")) {
             const vehicleId = parseInt(message.split(":")[1]);
             const vehicle = vehicleMap[vehicleId];
-
             const driver = vehicle?.driver || "운전자";
             const vehicleName = vehicle?.name || `vehicle-${vehicleId}`;
 
-            showCustomAlert(`🚨 ${driver}의 차량 ${vehicleName}(${vehicleId})에서 사고가 발생했습니다! 🚨`);
+            // ✅ 알림 메시지를 저장하고 새로고침
+            localStorage.setItem("pendingAlert", `🚨 ${driver}의 차량 ${vehicleName}(${vehicleId})에서 사고가 발생했습니다! 🚨`);
+            location.reload();
         }
     };
-
 
     socket.onerror = function(error) {
         console.error("WebSocket 오류:", error);
     };
 </script>
-
-<div id="custom-alert" style="
-  display: none;
-  position: fixed;
-  top: 40px;
-  right: 40px;
-  background-color: #ef4444;
-  color: white;
-  padding: 16px 24px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  font-weight: bold;
-  z-index: 9999;
-  transition: opacity 0.3s ease;
-"></div>
 
 </body>
 </html>

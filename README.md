@@ -144,9 +144,3 @@
   </tbody>
 </table>
 
-MCU : STM32 Nucleo-L073RZ, Raspberry PI 4
-통신 : CAN, UART
-소자 :  SW-420 진동감지 센서, HC-SR04 초음파 센서
-쉴드 : WEKIT LCD 1602 쉴드, 아두이노 모터 쉴드 Rev 3, DHT11 이지 모듈 쉴드
-모터 : SG90-HV 서보모터, MB-2832E 엔코더 모터
-

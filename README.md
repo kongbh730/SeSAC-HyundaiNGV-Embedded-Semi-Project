@@ -6,41 +6,57 @@
 
 <hr>
 <h2>👨‍👩‍👦‍👦 팀원 소개</h2>
-<table>
+<table width="1000">
   <tbody>
     <tr>
-      <td>
+      <td width="25%" align="center">
         <a href="https://github.com/jihosky">
-          <img src="https://github.com/jihosky.png" width="200" style="border-radius: 50%;">
+          <img src="https://github.com/jihosky.png" style="width: 90%; border-radius: 50%;">
         </a>
       </td>
-      <td>
+      <td width="25%" align="center">
         <a href="https://github.com/kongbh730">
-          <img src="https://github.com/kongbh730.png" width="200" style="border-radius: 50%;">
+          <img src="https://github.com/kongbh730.png" style="width: 90%; border-radius: 50%;">
         </a>
       </td>
-      <td>
+      <td width="25%" align="center">
         <a href="https://github.com/Do-Yeop-Kim">
-          <img src="https://github.com/Do-Yeop-Kim.png" width="200" style="border-radius: 50%;">
+          <img src="https://github.com/Do-Yeop-Kim.png" style="width: 90%; border-radius: 50%;">
         </a>
       </td>
-      <td>
+      <td width="25%" align="center">
         <a href="https://github.com/jin05105">
-          <img src="https://github.com/jin05105.png" width="200" style="border-radius: 50%;">
+          <img src="https://github.com/jin05105.png" style="width: 90%; border-radius: 50%;">
         </a>
       </td>
     </tr>
     <tr>
-      <td align="center"><a href="https://github.com/jihosky">문지호<br>@jihosky</a></td>
-      <td align="center"><a href="https://github.com/kongbh730">공병현<br>@kongbh730</a></td>
-      <td align="center"><a href="https://github.com/Do-Yeop-Kim">김도엽<br>@Do-Yeop-Kim</a></td>
-      <td align="center"><a href="https://github.com/jin05105">이태규<br>@jin05105</a></td>
+      <td align="center">
+        <a href="https://github.com/jihosky">문지호<br>@jihosky</a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/kongbh730">공병현<br>@kongbh730</a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/Do-Yeop-Kim">김도엽<br>@Do-Yeop-Kim</a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/jin05105">이태규<br>@jin05105</a>
+      </td>
     </tr>
     <tr>
-      <td>아이디어 선정<br>프로젝트 매니지먼트<br>아키텍처 설계<br>CAN, UART, UDS 통신 구축 및 테스팅</td>
-      <td>부저, LED 모듈 개발<br>웹 서비스 구축<br>산출물 관리</td>
-      <td>엔코더 모터<br>서보 모터 모듈 개발</td>
-      <td>LCD 모듈 개발<br>요구사항 분석 및 테스트 케이스 작성</td>
+      <td align="center">
+        아이디어 선정<br>프로젝트 매니지먼트<br>아키텍처 설계<br>CAN, UART, UDS 통신 구축 및 테스팅
+      </td>
+      <td align="center">
+        부저, LED 모듈 개발<br>웹 서비스 구축<br>산출물 관리
+      </td>
+      <td align="center">
+        엔코더 모터<br>서보 모터 모듈 개발
+      </td>
+      <td align="center">
+        LCD 모듈 개발<br>요구사항 분석 및 테스트 케이스 작성
+      </td>
     </tr>
   </tbody>
 </table>

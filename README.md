@@ -67,11 +67,11 @@
 <ul>
   <li><strong>📄 <a href="https://github.com/kongbh730/SeSAC-HyundaiNGV-Embedded-Semi-Project/blob/main/CANtoWebGateway.py">RaspiCAN.py</strong> – 라즈베리파이 CAN 통신 및 사고 감지 스크립트</a></li>
   <li><strong>📄 <a href="https://github.com/kongbh730/SeSAC-HyundaiNGV-Embedded-Semi-Project/blob/main/RaspiCAN.py">CANtoWebGateway.py</strong> – 라즈베리파이 CAN-Web 통신 스크립트</a></li>
-  <li><strong>📁 LCD/</strong> – LCD 디스플레이 제어</li>
-  <li><strong>📁 MotorControl/</strong> – DC 모터 제어</li>
-  <li><strong>📁 ServoMotorControl/</strong> – 서보모터 제어</li>
-  <li><strong>📁 Buzzer/</strong> – 부저 (경고음) 제어</li>
-  <li><strong>📁 WebService/</strong> – Spring Boot 웹 서비스 (DB, WebSocket 실시간 알림)
+  <li><strong>📁 <a href="https://github.com/kongbh730/SeSAC-HyundaiNGV-Embedded-Semi-Project/tree/main/LCD">LCD/</strong> – LCD 디스플레이 제어</a></li>
+  <li><strong>📁 <a href="https://github.com/kongbh730/SeSAC-HyundaiNGV-Embedded-Semi-Project/tree/main/MotorControl">MotorControl/</strong> – DC 모터 제어</a></li>
+  <li><strong>📁 <a href="https://github.com/kongbh730/SeSAC-HyundaiNGV-Embedded-Semi-Project/tree/main/ServoMotorControl">ServoMotorControl/</strong> – 서보모터 제어</a></li>
+  <li><strong>📁 <a href="https://github.com/kongbh730/SeSAC-HyundaiNGV-Embedded-Semi-Project/tree/main/Buzzer">Buzzer/</strong> – 부저 (경고음) 제어트</a></li>
+  <li><strong>📁 <a href="https://github.com/kongbh730/SeSAC-HyundaiNGV-Embedded-Semi-Project/tree/main/WebService">WebService/</strong> – Spring Boot 웹 서비스 (DB, WebSocket 실시간 알림)</a>
     <ul>
       <li>src/ – 자바 소스코드</li>
       <li>build.gradle – Gradle 설정</li>

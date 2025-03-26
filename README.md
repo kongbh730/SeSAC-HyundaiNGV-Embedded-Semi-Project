@@ -6,7 +6,7 @@
 <img src="https://github.com/user-attachments/assets/b1219eef-5cc7-4096-b62d-ff7fa889b284" alt="중간 프로젝트 플로우차트 버스" style="width: 100%; max-width: 600px;">
 
 <h2>구현 산출물</h2>
-<img src="https://github.com/user-attachments/assets/5a44d944-afe9-401d-8108-34c59e0b2af4" alt="구현 산출물" style="width: 100%; max-width: 200px;">
+<img src="https://github.com/user-attachments/assets/5a44d944-afe9-401d-8108-34c59e0b2af4" alt="구현 산출물" style="width: 50%;">
 
 <h2>🎬 프로젝트 시연 영상</h2>
 

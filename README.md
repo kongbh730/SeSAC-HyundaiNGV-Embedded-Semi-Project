@@ -46,7 +46,7 @@
     </tr>
     <tr>
       <td align="center">
-        아이디어 선정<br>프로젝트 매니지먼트<br>아키텍처 설계<br>CAN, UART, UDS 통신 구축 및 테스팅
+        프로젝트 매니지먼트<br>아키텍처 설계<br>CAN, UART, UDS 통신 구축 및 테스팅
       </td>
       <td align="center">
         부저, LED 모듈 개발<br>웹 서비스 구축<br>산출물 관리

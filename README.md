@@ -1,5 +1,5 @@
 <h1>🚘 현대자동차그룹 모빌리티 SW 개발자 데뷔 과정</h1>
-<h2>🔧 중간 프로젝트</h2>
+<h2>🔧 중간 프로젝트 CARS (Collison Avoidance + Report System) </h2>
 <h2><a href="http://192.168.100.122:8081/vehicleViewer.html">사고 모니터링 웹 서비스 : 미배포</h2>
 <p>📅 <strong>진행 기간:</strong> 2025-03-18 ~ 2025-03-27</p>
 

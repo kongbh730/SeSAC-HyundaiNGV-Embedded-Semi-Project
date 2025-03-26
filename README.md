@@ -7,7 +7,7 @@
 <h2>🎬 프로젝트 시연 영상</h2>
 [![프로젝트 시연 영상](https://img.youtube.com/vi/6gstFbx9MVY/0.jpg)](https://www.youtube.be/6gstFbx9MVY)
 
-[![Video Label](http://img.youtube.com/vi/59USvjy2toI/0.jpg)](https://youtu.be/59USvjy2toI)
+[![Video Label](http://img.youtube.com/vi/6gstFbx9MVY/0.jpg)](https://youtu.be/6gstFbx9MVY)
 
 <hr>
 <h2>👨‍👩‍👦‍👦 팀원 소개</h2>

@@ -6,41 +6,57 @@
 
 <hr>
 <h2>👨‍👩‍👦‍👦 팀원 소개</h2>
-<table>
+<table width="1000">
   <tbody>
     <tr>
-      <td>
+      <td width="25%" align="center">
         <a href="https://github.com/jihosky">
-          <img src="https://github.com/jihosky.png" width="200" style="border-radius: 50%;">
+          <img src="https://github.com/jihosky.png" style="width: 90%; border-radius: 50%;">
         </a>
       </td>
-      <td>
+      <td width="25%" align="center">
         <a href="https://github.com/kongbh730">
-          <img src="https://github.com/kongbh730.png" width="200" style="border-radius: 50%;">
+          <img src="https://github.com/kongbh730.png" style="width: 90%; border-radius: 50%;">
         </a>
       </td>
-      <td>
+      <td width="25%" align="center">
         <a href="https://github.com/Do-Yeop-Kim">
-          <img src="https://github.com/Do-Yeop-Kim.png" width="200" style="border-radius: 50%;">
+          <img src="https://github.com/Do-Yeop-Kim.png" style="width: 90%; border-radius: 50%;">
         </a>
       </td>
-      <td>
+      <td width="25%" align="center">
         <a href="https://github.com/jin05105">
-          <img src="https://github.com/jin05105.png" width="200" style="border-radius: 50%;">
+          <img src="https://github.com/jin05105.png" style="width: 90%; border-radius: 50%;">
         </a>
       </td>
     </tr>
     <tr>
-      <td align="center"><a href="https://github.com/jihosky">문지호<br>@jihosky</a></td>
-      <td align="center"><a href="https://github.com/kongbh730">공병현<br>@kongbh730</a></td>
-      <td align="center"><a href="https://github.com/Do-Yeop-Kim">김도엽<br>@Do-Yeop-Kim</a></td>
-      <td align="center"><a href="https://github.com/jin05105">이태규<br>@jin05105</a></td>
+      <td align="center">
+        <a href="https://github.com/jihosky">문지호<br>@jihosky</a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/kongbh730">공병현<br>@kongbh730</a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/Do-Yeop-Kim">김도엽<br>@Do-Yeop-Kim</a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/jin05105">이태규<br>@jin05105</a>
+      </td>
     </tr>
     <tr>
-      <td>CAN 통신 구축,...</td>
-      <td>WebService 구현,...</td>
-      <td>Motor 기능 구현,...</td>
-      <td>LCD 기능 구현,...</td>
+      <td align="center">
+        프로젝트 매니지먼트<br>아키텍처 설계<br>CAN, UART, UDS 통신 구축 및 테스팅
+      </td>
+      <td align="center">
+        부저, LED 모듈 개발<br>웹 서비스 구축<br>산출물 관리
+      </td>
+      <td align="center">
+        엔코더 모터<br>서보 모터 모듈 개발
+      </td>
+      <td align="center">
+        LCD 모듈 개발<br>요구사항 분석 및 테스트 케이스 작성
+      </td>
     </tr>
   </tbody>
 </table>
@@ -49,16 +65,44 @@
 <hr>
 <h2>📁 코드 구조 및 설명</h2>
 <ul>
-  <li><strong>📄 RaspiCAN.py</strong> – 라즈베리파이 CAN 통신 및 사고 감지 스크립트</li>
-  <li><strong>📁 LCD/</strong> – LCD 디스플레이 제어</li>
-  <li><strong>📁 Motor/</strong> – DC 모터 제어</li>
-  <li><strong>📁 Motor/ServoMotor/</strong> – 서보모터 제어</li>
-  <li><strong>📁 Buzzer/</strong> – 부저 (경고음) 제어</li>
-  <li><strong>📁 WebService/</strong> – Spring Boot 웹 서비스 (DB, WebSocket 실시간 알림)
+  <li><strong>📄 <a href="https://github.com/kongbh730/SeSAC-HyundaiNGV-Embedded-Semi-Project/blob/main/CANtoWebGateway.py">RaspiCAN.py</strong> – 라즈베리파이 CAN 통신 및 사고 감지 스크립트</a></li>
+  <li><strong>📄 <a href="https://github.com/kongbh730/SeSAC-HyundaiNGV-Embedded-Semi-Project/blob/main/RaspiCAN.py">CANtoWebGateway.py</strong> – 라즈베리파이 CAN-Web 통신 스크립트</a></li>
+  <li><strong>📁 <a href="https://github.com/kongbh730/SeSAC-HyundaiNGV-Embedded-Semi-Project/tree/main/LCD">LCD/</strong> – LCD 디스플레이 제어</a>
     <ul>
-      <li>src/ – 자바 소스코드</li>
+      <li>📁 Core/</li>
+      <li>📁 Drivers/</li>
+      <li>📁 MDK-ARM/</li>
+      <li>LCD.ioc</li>
+    </ul>
+  </li>
+  <li><strong>📁 <a href="https://github.com/kongbh730/SeSAC-HyundaiNGV-Embedded-Semi-Project/tree/main/MotorControl">MotorControl/</strong> – DC 모터 제어</a>
+    <ul>
+      <li>📁 Core/</li>
+      <li>📁 Drivers/</li>
+      <li>📁 MDK-ARM/</li>
+      <li>motor.ioc</li>
+    </ul>
+  </li>
+  <li><strong>📁 <a href="https://github.com/kongbh730/SeSAC-HyundaiNGV-Embedded-Semi-Project/tree/main/ServoMotorControl">ServoMotorControl/</strong> – 서보모터 제어</a>
+    <ul>
+      <li>📁 Core/</li>
+      <li>📁 Drivers/</li>
+      <li>📁 MDK-ARM/</li>
+      <li>Servo_Motor.ioc</li>
+    </ul>
+  </li>
+  <li><strong>📁 <a href="https://github.com/kongbh730/SeSAC-HyundaiNGV-Embedded-Semi-Project/tree/main/Buzzer">Buzzer/</strong> – 부저 (경고음) 제어트</a>
+    <ul>
+      <li>📁 Core/</li>
+      <li>📁 Drivers/</li>
+      <li>📁 MDK-ARM/</li>
+      <li>SeSAC_semi_project.ioc</li>
+    </ul>
+  </li>
+  <li><strong>📁 <a href="https://github.com/kongbh730/SeSAC-HyundaiNGV-Embedded-Semi-Project/tree/main/WebService">WebService/</strong> – Spring Boot 웹 서비스 (DB, WebSocket 실시간 알림)</a>
+    <ul>
+      <li>📁 src/ – 자바 소스코드</li>
       <li>build.gradle – Gradle 설정</li>
-      <li>application.yml – 환경 설정</li>
     </ul>
   </li>
 </ul>

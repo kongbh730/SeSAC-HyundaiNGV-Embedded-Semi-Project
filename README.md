@@ -65,8 +65,8 @@
 <hr>
 <h2>📁 코드 구조 및 설명</h2>
 <ul>
-  <li><strong>📄 RaspiCAN.py</strong> – 라즈베리파이 CAN 통신 및 사고 감지 스크립트</li>
-  <li><strong>📄 CANtoWebGateway.py</strong> – 라즈베리파이 CAN-Web 통신 스크립티</li>
+  <li><strong>📄 <a href="https://github.com/kongbh730/SeSAC-HyundaiNGV-Embedded-Semi-Project/blob/main/CANtoWebGateway.py">RaspiCAN.py</strong> – 라즈베리파이 CAN 통신 및 사고 감지 스크립트</a></li>
+  <li><strong>📄 <a href="https://github.com/kongbh730/SeSAC-HyundaiNGV-Embedded-Semi-Project/blob/main/RaspiCAN.py">CANtoWebGateway.py</strong> – 라즈베리파이 CAN-Web 통신 스크립트</a></li>
   <li><strong>📁 LCD/</strong> – LCD 디스플레이 제어</li>
   <li><strong>📁 MotorControl/</strong> – DC 모터 제어</li>
   <li><strong>📁 ServoMotorControl/</strong> – 서보모터 제어</li>

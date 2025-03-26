@@ -5,9 +5,6 @@ import can
 import isotp
 import serial
 
-# Web post import
-import requests 
-
 # GPIO 핀 설정 (BCM 번호)
 TRIG_PIN = 23
 ECHO_PIN = 24
@@ -15,8 +12,8 @@ VIBRATION_PIN = 16
 
 # CAN 설정
 CAN_CHANNEL = 'can0'
-DISTANCE_CAN_ID = 0x100
-VIBRATION_CAN_ID = 0x200
+DISTANCE_CAN_ID = 0x200
+VIBRATION_CAN_ID = 0x100
 
 # UART 설정 (ttyS0, 9600 baudrate)
 uart1 = serial.Serial('/dev/ttyS0', 9600, timeout=1)
@@ -82,19 +79,6 @@ def process_uds_request(payload):
     else:
         print(f"UDS: 알 수 없는 서비스 ID: {hex(service_id)}")
         return bytes([0x7F, service_id, 0x11])
-        
-# Web post function
-def send_to_server(vehicle_id, distance, vibration):
-    try:
-        payload = {
-            "vehicleId": vehicle_id,
-            "distance": distance,
-            "vibration": vibration
-        }
-        response = requests.post("http://192.168.100.122:8081/api/can", json=payload)
-        print(f"[POST 전송] 상태 전송 완료 (status {response.status_code})")
-    except Exception as e:
-        print(f"[POST 실패] {e}")
 
 
 def main():
@@ -104,7 +88,7 @@ def main():
     GPIO.setup(VIBRATION_PIN, GPIO.IN)
 
     # CAN 버스 초기화 (센서용과 UDS용 모두 동일한 버스 사용)
-    bus = can.interface.Bus(channel=CAN_CHANNEL, interface='socketcan')
+    bus = can.interface.Bus(channel=CAN_CHANNEL, bustype='socketcan')
 
     # UDS용 ISO-TP 스택 설정
     # 클라이언트는 요청 시 0x7DF로 전송하므로, 서버는 rxid=0x7DF, 응답은 txid=0x7C4로 전송합니다.
@@ -142,7 +126,7 @@ def main():
                                                data=distance_data,
                                                is_extended_id=False)
                     bus.send(distance_msg)
-                    print(f"[CAN 0x100] 거리: {distance_int} cm")
+                    print(f"[CAN 0x200] 거리: {distance_int} cm")
 
                     # 초음파 거리 5cm 미만이면 UART로 '1' 전송
                     if distance_int < 5:
@@ -162,7 +146,7 @@ def main():
                                             data=vibration_data,
                                             is_extended_id=False)
                 bus.send(vibration_msg)
-                print(f"[CAN 0x200] 진동 상태: {'충돌 감지' if vibration_detected else '정상'}")
+                print(f"[CAN 0x100] 진동 상태: {'충돌 감지' if vibration_detected else '정상'}")
 
                 # 충돌 감지 시 UART로 '0' 전송
                 if vibration_detected:
@@ -172,10 +156,7 @@ def main():
                     uart3.write(data)
                     uart4.write(data)
                     print("[UART] '0' 전송 (충돌 감지)")
-                    
-                    # 서버 전송 함수 수행
-                    send_to_server(vehicle_id=1, distance=-1, vibration=True)
-			        
+
             # 짧은 딜레이 (UDS와 센서 처리를 위해 폴링 주기를 짧게 함)
             time.sleep(0.01)
 

@@ -81,7 +81,46 @@
 
 <script>
     const vehicleMap = {};
+    let accidentList = [];
 
+    function showCustomAlert(message) {
+        const alertBox = document.getElementById("custom-alert");
+        alertBox.textContent = message;
+        alertBox.style.display = "block";
+        alertBox.style.opacity = "1";
+
+        setTimeout(() => {
+            alertBox.style.opacity = "0";
+            setTimeout(() => {
+                alertBox.style.display = "none";
+                location.reload();
+            }, 300);
+        }, 3000);
+    }
+
+    function renderAccidentTable() {
+        const tbody = document.querySelector('#accident-table tbody');
+        tbody.innerHTML = ''; // 전체 초기화
+
+        // 최신순 정렬
+        accidentList.sort((a, b) => new Date(b.datetime) - new Date(a.datetime));
+
+        accidentList.forEach(accident => {
+            const v = vehicleMap[accident.vehicleId] || {};
+            const row = document.createElement('tr');
+            row.innerHTML = `
+        <td>${accident.id || '-'}</td>
+        <td>${v.name || accident.vehicleId}</td>
+        <td>${v.driver || '-'}</td>
+        <td>${accident.location}</td>
+        <td>${accident.datetime || '-'}</td>
+        <td>${accident.status || 'Reported'}</td>
+      `;
+            tbody.appendChild(row);
+        });
+    }
+
+    // 차량 → 사고 초기 불러오기
     fetch('/api/vehicles')
         .then(res => res.json())
         .then(vehicles => {
@@ -90,22 +129,48 @@
         })
         .then(res => res.json())
         .then(accidents => {
-            const tbody = document.querySelector('#accident-table tbody');
-            accidents.forEach(a => {
-                const v = vehicleMap[a.vehicleId] || {};
-                const row = document.createElement('tr');
-                row.innerHTML = `
-          <td>${a.id}</td>
-          <td>${v.name || a.vehicleId}</td>
-          <td>${v.driver || '-'}</td>
-          <td>${a.location}</td>
-          <td>${a.datetime || a.date || '-'}</td>
-          <td>${a.status || 'Reported'}</td>
-        `;
-                tbody.appendChild(row);
-            });
+            accidentList = accidents;
+            renderAccidentTable();
         });
+
+    // WebSocket 실시간 사고 수신
+    const socket = new WebSocket("ws://192.168.100.122:8081/ws/accidents");
+
+    socket.onmessage = function(event) {
+        const message = event.data;
+        console.log("🚨 사고 메시지 수신:", message);
+
+        if (message.startsWith("accident:")) {
+            const vehicleId = parseInt(message.split(":")[1]);
+            const vehicle = vehicleMap[vehicleId];
+
+            const driver = vehicle?.driver || "운전자";
+            const vehicleName = vehicle?.name || `vehicle-${vehicleId}`;
+
+            showCustomAlert(`🚨 ${driver}의 차량 ${vehicleName}(${vehicleId})에서 사고가 발생했습니다! 🚨`);
+        }
+    };
+
+
+    socket.onerror = function(error) {
+        console.error("WebSocket 오류:", error);
+    };
 </script>
+
+<div id="custom-alert" style="
+  display: none;
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  background-color: #ef4444;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-weight: bold;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+"></div>
 
 </body>
 </html>

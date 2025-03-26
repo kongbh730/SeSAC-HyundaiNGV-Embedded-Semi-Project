@@ -50,15 +50,15 @@
 <h2>📁 코드 구조 및 설명</h2>
 <ul>
   <li><strong>📄 RaspiCAN.py</strong> – 라즈베리파이 CAN 통신 및 사고 감지 스크립트</li>
+  <li><strong>📄 CANtoWebGateway.py</strong> – 라즈베리파이 CAN-Web 통신 스크립티</li>
   <li><strong>📁 LCD/</strong> – LCD 디스플레이 제어</li>
-  <li><strong>📁 Motor/</strong> – DC 모터 제어</li>
-  <li><strong>📁 Motor/ServoMotor/</strong> – 서보모터 제어</li>
+  <li><strong>📁 MotorControl/</strong> – DC 모터 제어</li>
+  <li><strong>📁 ServoMotorControl/</strong> – 서보모터 제어</li>
   <li><strong>📁 Buzzer/</strong> – 부저 (경고음) 제어</li>
   <li><strong>📁 WebService/</strong> – Spring Boot 웹 서비스 (DB, WebSocket 실시간 알림)
     <ul>
       <li>src/ – 자바 소스코드</li>
       <li>build.gradle – Gradle 설정</li>
-      <li>application.yml – 환경 설정</li>
     </ul>
   </li>
 </ul>

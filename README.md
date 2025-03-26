@@ -1,9 +1,14 @@
 <h1>🚘 현대자동차그룹 모빌리티 SW 개발자 데뷔 과정</h1>
 <h2>🔧 중간 프로젝트</h2>
-<h3><a href="http://192.168.100.122:8081/vehicleViewer.html">사고 모니터링 웹 서비스 : 미배포</h3>
+<h2><a href="http://192.168.100.122:8081/vehicleViewer.html">사고 모니터링 웹 서비스 : 미배포</h2>
 <p>📅 <strong>진행 기간:</strong> 2025-03-18 ~ 2025-03-27</p>
 
 <img src="https://github.com/user-attachments/assets/b1219eef-5cc7-4096-b62d-ff7fa889b284" alt="중간 프로젝트 플로우차트 버스" style="width: 100%; max-width: 600px;">
+<h2>🎬 프로젝트 시연 영상</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6gstFbx9MVY" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 <hr>
 <h2>👨‍👩‍👦‍👦 팀원 소개</h2>
@@ -62,7 +67,6 @@
   </tbody>
 </table>
 
-
 <hr>
 <h2>📁 코드 구조 및 설명</h2>
 <ul>
@@ -107,3 +111,44 @@
     </ul>
   </li>
 </ul>
+
+<hr>
+<h2>🛠 사용 장비</h2>
+
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>분류</th>
+      <th>장비</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>MCU</strong></td>
+      <td>STM32 Nucleo-L073RZ, Raspberry Pi 4</td>
+    </tr>
+    <tr>
+      <td><strong>통신</strong></td>
+      <td>CAN, UART</td>
+    </tr>
+    <tr>
+      <td><strong>센서</strong></td>
+      <td>SW-420 진동 감지 센서, HC-SR04 초음파 센서</td>
+    </tr>
+    <tr>
+      <td><strong>쉴드</strong></td>
+      <td>WEKIT LCD 1602 쉴드, 아두이노 모터 쉴드 Rev 3, DHT11 이지 모듈 쉴드</td>
+    </tr>
+    <tr>
+      <td><strong>모터</strong></td>
+      <td>SG90-HV 서보모터, MB-2832E 엔코더 모터</td>
+    </tr>
+  </tbody>
+</table>
+
+MCU : STM32 Nucleo-L073RZ, Raspberry PI 4
+통신 : CAN, UART
+소자 :  SW-420 진동감지 센서, HC-SR04 초음파 센서
+쉴드 : WEKIT LCD 1602 쉴드, 아두이노 모터 쉴드 Rev 3, DHT11 이지 모듈 쉴드
+모터 : SG90-HV 서보모터, MB-2832E 엔코더 모터
+

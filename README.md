@@ -7,34 +7,46 @@
 <hr>
 <h2>👨‍👩‍👦‍👦 팀원 소개</h2>
 <table>
-  <thead>
-    <tr>
-      <th>이름</th>
-      <th>GitHub</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
-      <td>문지호</td>
-      <td><a href="https://github.com/jihosky">@jihosky</a></td>
+      <td>
+        <a href="https://github.com/jihosky">
+          <img src="https://github.com/jihosky.png" width="200" style="border-radius: 50%;">
+        </a>
+      </td>
+      <td>
+        <a href="https://github.com/kongbh730">
+          <img src="https://github.com/kongbh730.png" width="200" style="border-radius: 50%;">
+        </a>
+      </td>
+      <td>
+        <a href="https://github.com/Do-Yeop-Kim">
+          <img src="https://github.com/Do-Yeop-Kim.png" width="200" style="border-radius: 50%;">
+        </a>
+      </td>
+      <td>
+        <a href="https://github.com/jin05105">
+          <img src="https://github.com/jin05105.png" width="200" style="border-radius: 50%;">
+        </a>
+      </td>
     </tr>
     <tr>
-      <td>공병현</td>
-      <td><a href="https://github.com/kongbh730">@kongbh730</a></td>
+      <td align="center"><a href="https://github.com/jihosky">문지호<br>@jihosky</a></td>
+      <td align="center"><a href="https://github.com/kongbh730">공병현<br>@kongbh730</a></td>
+      <td align="center"><a href="https://github.com/Do-Yeop-Kim">김도엽<br>@Do-Yeop-Kim</a></td>
+      <td align="center"><a href="https://github.com/jin05105">이태규<br>@jin05105</a></td>
     </tr>
     <tr>
-      <td>김도엽</td>
-      <td><a href="https://github.com/Do-Yeop-Kim">@Do-Yeop-Kim</a></td>
-    </tr>
-    <tr>
-      <td>이태규</td>
-      <td><a href="https://github.com/jin05105">@jin05105</a></td>
+      <td>CAN 통신 구축,...</td>
+      <td>WebService 구현,...</td>
+      <td>Motor 기능 구현,...</td>
+      <td>LCD 기능 구현,...</td>
     </tr>
   </tbody>
 </table>
 
-<hr>
 
+<hr>
 <h2>📁 코드 구조 및 설명</h2>
 <ul>
   <li><strong>📄 RaspiCAN.py</strong> – 라즈베리파이 CAN 통신 및 사고 감지 스크립트</li>

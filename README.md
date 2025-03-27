@@ -1,8 +1,16 @@
 <h1>🚘 현대자동차그룹 모빌리티 SW 개발자 데뷔 과정</h1>
-<h2>🔧 중간 프로젝트</h2>
+<h2>🔧 중간 프로젝트 CARS (Collison Avoidance + Report System) </h2>
+<h2><a href="http://192.168.100.122:8081/vehicleViewer.html">사고 모니터링 웹 서비스 : 미배포</h2>
 <p>📅 <strong>진행 기간:</strong> 2025-03-18 ~ 2025-03-27</p>
 
 <img src="https://github.com/user-attachments/assets/b1219eef-5cc7-4096-b62d-ff7fa889b284" alt="중간 프로젝트 플로우차트 버스" style="width: 100%; max-width: 600px;">
+
+<h2>구현 산출물</h2>
+<img src="https://github.com/user-attachments/assets/5a44d944-afe9-401d-8108-34c59e0b2af4" alt="구현 산출물" style="width: 50%;">
+
+<h2>🎬 프로젝트 시연 영상</h2>
+
+[![Video Label](http://img.youtube.com/vi/6gstFbx9MVY/0.jpg)](https://youtu.be/6gstFbx9MVY)
 
 <hr>
 <h2>👨‍👩‍👦‍👦 팀원 소개</h2>
@@ -61,7 +69,6 @@
   </tbody>
 </table>
 
-
 <hr>
 <h2>📁 코드 구조 및 설명</h2>
 <ul>
@@ -91,7 +98,7 @@
       <li>Servo_Motor.ioc</li>
     </ul>
   </li>
-  <li><strong>📁 <a href="https://github.com/kongbh730/SeSAC-HyundaiNGV-Embedded-Semi-Project/tree/main/Buzzer">Buzzer/</strong> – 부저 (경고음) 제어트</a>
+  <li><strong>📁 <a href="https://github.com/kongbh730/SeSAC-HyundaiNGV-Embedded-Semi-Project/tree/main/Buzzer">Buzzer/</strong> – 부저 (경고음) 제어</a>
     <ul>
       <li>📁 Core/</li>
       <li>📁 Drivers/</li>
@@ -106,3 +113,38 @@
     </ul>
   </li>
 </ul>
+
+<hr>
+<h2>🛠 사용 장비</h2>
+
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>분류</th>
+      <th>장비</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>MCU</strong></td>
+      <td>STM32 Nucleo-L073RZ, Raspberry Pi 4</td>
+    </tr>
+    <tr>
+      <td><strong>통신</strong></td>
+      <td>CAN, UART</td>
+    </tr>
+    <tr>
+      <td><strong>센서</strong></td>
+      <td>SW-420 진동 감지 센서, HC-SR04 초음파 센서</td>
+    </tr>
+    <tr>
+      <td><strong>쉴드</strong></td>
+      <td>WEKIT LCD 1602 쉴드, 아두이노 모터 쉴드 Rev 3, DHT11 이지 모듈 쉴드</td>
+    </tr>
+    <tr>
+      <td><strong>모터</strong></td>
+      <td>SG90-HV 서보모터, MB-2832E 엔코더 모터</td>
+    </tr>
+  </tbody>
+</table>
+

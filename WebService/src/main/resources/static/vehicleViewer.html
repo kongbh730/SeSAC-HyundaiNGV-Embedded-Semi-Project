@@ -67,6 +67,9 @@
 
 <header>
   <h1>🚗 Vehicle Viewer</h1>
+  <button id="reset-button" style="background:#10b981; color:white; padding:8px 12px; border:none; border-radius:4px;">
+    상태 초기화
+  </button>
 </header>
 
 <div class="tabs">
@@ -162,6 +165,27 @@
   socket.onerror = function(error) {
     console.error("WebSocket 오류:", error);
   };
+
+  document.getElementById("reset-button").addEventListener("click", () => {
+    if (confirm("⚠️ 모든 차량 상태를 'Normal'로 초기화하시겠습니까?")) {
+      fetch("/api/vehicles/reset-status", {
+        method: "POST"
+      })
+              .then(res => {
+                if (res.ok) {
+                  alert("✅ 상태가 초기화되었습니다!");
+                  location.reload();
+                } else {
+                  alert("❌ 초기화 실패");
+                }
+              })
+              .catch(err => {
+                console.error("초기화 오류:", err);
+                alert("❌ 서버 오류 발생");
+              });
+    }
+  });
+
 </script>
 
 <div id="custom-alert" style="

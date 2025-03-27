@@ -16,4 +16,8 @@ public class VehicleService {
     public List<VehicleDTO> getAllVehicles() {
         return vehicleDAO.findAll();
     }
+
+    public void resetAllStatus() {
+        vehicleDAO.resetAllStatus();
+    }
 }

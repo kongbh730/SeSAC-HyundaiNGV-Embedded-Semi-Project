@@ -2,6 +2,8 @@ package com.example.embeddedsemiproject.dao;
 
 import com.example.embeddedsemiproject.dto.VehicleDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -30,4 +32,12 @@ public class VehicleDAO {
         String sql = "UPDATE Vehicles SET status = ? WHERE id = ?";
         jdbcTemplate.update(sql, status, id);
     }
+
+    // VehicleRepository.java (or DAO)
+    // VehicleDAO.java
+    public void resetAllStatus() {
+        String sql = "UPDATE Vehicles SET status = 'Normal'";
+        jdbcTemplate.update(sql);
+    }
+
 }
